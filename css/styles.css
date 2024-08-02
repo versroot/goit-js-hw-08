@@ -11,7 +11,7 @@ li {
   gap: 24px;
 }
 .gallery-item {
-  flex: 1 1 calc(33.333% - 24px); /* Three images per row with gap consideration */
+  flex: 1 1 calc(33.333% - 24px);
 }
 .gallery-item img {
   width: 100%;

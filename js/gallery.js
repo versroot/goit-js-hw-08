@@ -66,11 +66,9 @@ const images = [
 
 const imagesMarkup = images
   .map(
-    (
-      image // href="large-image.jpg" triggers download on click
-    ) =>
+    image =>
       `<li class="gallery-item">
-  <a class="gallery-link" href=#> 
+  <a class="gallery-link" href=${image.original}> 
     <img
       class="gallery-image"
       src=${image.preview}
@@ -89,13 +87,14 @@ const selectedImage = document.querySelector('.gallery');
 selectedImage.addEventListener('click', selectImage);
 
 function selectImage(event) {
+  event.preventDefault();
   if (event.target.nodeName !== 'IMG') {
     return;
   }
 
   const imgToShow = basicLightbox.create(
     `
-		<img width="" height="" src=${event.target.src}>
+		<img src=${event.target.dataset.source} alt=${event.target.alt}>
 	`
   );
   imgToShow.show();
