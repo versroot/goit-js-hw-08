@@ -1,0 +1,18 @@
+* {
+  box-sizing: border-box;
+}
+
+li {
+  list-style-type: none;
+}
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+.gallery-item {
+  flex: 1 1 calc(33.333% - 24px); /* Three images per row with gap consideration */
+}
+.gallery-item img {
+  width: 100%;
+}
